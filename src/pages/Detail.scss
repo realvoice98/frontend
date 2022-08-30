@@ -1,0 +1,201 @@
+.DetailCategory {
+  button {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  .main-header {
+    background-position: 50% 50%;
+    background-size: cover;
+    position: relative;
+    height: 100px;
+    color: var(--white);
+
+    .main-back-color {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .main-header-contents {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 700px;
+      padding: 0 16px;
+      text-align: center;
+
+      .main-subject {
+        margin-bottom: 8px;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 60px;
+        letter-spacing: -0.7px;
+      }
+
+      .main-subject-sub {
+        margin-bottom: 32px;
+        line-height: 24px;
+      }
+
+      .main-form-input {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .input-main {
+          width: 80%;
+          height: 54px;
+          padding: 11px 16px;
+          border-radius: 4px 0 0 4px;
+          color: white;
+
+          &:focus {
+            border-color: 	white;
+            outline: 1px;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0.3, 0.3);
+          }
+        }
+
+        .btn-main {
+          width: 20%;
+          height: 54px;
+          padding: 14px 24px;
+          border-radius: 0 4px 4px 0;
+          color: var(--white);
+          font-size: 16px;
+          color: antiquewhite;
+          font-weight: 550;
+          background: dimgray;
+          &::before {
+            content: '';
+            color: #fff;
+          }
+
+          &:hover {
+            background-color: gray;
+          }
+
+        }
+      }
+    }
+  }
+  .main-nav {
+    background-color: var(--light);
+
+    .main-nav-category {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .MainNavCategoryLi {
+        width: 12.5%;
+        height: 104px;
+        padding: 6px 8px;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          .cate-wrap {
+            padding: 8px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &:hover {
+              padding-top: 0;
+
+              img {
+                padding-bottom: 8px;
+              }
+            }
+
+            p {
+              line-height: 24px;
+              font-size: 14px;
+              color: #323232;
+              text-align: center;
+            }
+            .main-popular-service {
+              padding: 50px 0;
+
+              &-h2 {
+                margin-bottom: 50px;
+                font-size: 32px;
+                font-weight: 500;
+                text-align: center;
+                line-height: 48px;
+                color: var(--dark);
+              }
+
+              .popular-card-wrap {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+
+                .popular-card {
+                  width: (100% / 3);
+                  padding: 0 15px 15px 15px;
+
+                  .card-outline {
+                    border-radius: 4px;
+                    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+                    .popular-card-img {
+                      background-size: cover;
+                      background-position: 50% 50%;
+                      height: 150px;
+                      border-top-left-radius: 4px;
+                      border-top-right-radius: 4px;
+                    }
+
+                    .popular-card-title {
+                      line-height: 33px;
+                      padding: 16px 0;
+                      font-size: 16px;
+                      font-weight: 500;
+                      text-align: center;
+                      color: var(--dark);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.parent{
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+}
+
+.first {
+  border: 1px solid red;
+  flex:1;
+  width:30%;
+  box-sizing: border-box;
+}
+
+.second{
+  border: 1px solid green;
+  flex:1;
+  margin: 0px 5%;
+  width:30%;
+  box-sizing: border-box;
+}
+
+.third{
+  border: 1px solid blue;
+  flex:1;
+  width:30%;
+  box-sizing: border-box;
+}

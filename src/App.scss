@@ -1,0 +1,74 @@
+@font-face {
+  font-family: CuteFont-Regular;
+  src : url('./styles/fonts/CuteFont-Regular.woff');
+}
+@font-face {
+  font-family: GamjaFlower-Regular;
+  src : url('./styles/fonts/GamjaFlower-Regular.woff');
+}
+@font-face {
+  font-family: SingleDay-Regular;
+  src : url('./styles/fonts/SingleDay-Regular.woff');
+}
+
+.App {
+  text-align: center;
+}
+div{
+  box-sizing: border-box;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline{
+  color: #F2AA4C ;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.wow-enter{
+  opacity: 0;
+
+}
+
+// 애니메이션 동작 때 적용할 CSS
+.wow-enter-active {
+  opacity: 1;
+  transition: all 500ms;
+}
+
+.list{
+  padding-left: 20px;
+  text-align: left;
+  border-bottom: 1px solid grey;
+}
