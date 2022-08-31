@@ -5,8 +5,8 @@ import { ImArrowDown2 } from 'react-icons/im';
 // STYLES
 import * as S from './SelectEle';
 
-function Select({ SelectData, getSelectValue }) {
-    const [add,setAdd] = useState(0);
+function Select({ SelectData, getSelectValue, add }) {
+    
     return (
         <S.Container>
             <S.Title>{SelectData.Q1}</S.Title>
@@ -16,8 +16,20 @@ function Select({ SelectData, getSelectValue }) {
                     <S.OptionCity value="서울시">서울시</S.OptionCity>
                     <ImArrowDown2 className="icon" />
                 </S.SelectCity>
-                
+
                 <S.SelectTown name="시/군/구" onChange={getSelectValue}>
+                <S.OptionTown value="">시/군/구</S.OptionTown>
+                    { SelectData.town.option.map((el, i) => {
+                        return (
+                            <S.OptionTownList key={i} value={el} >
+                                {el}
+                            </S.OptionTownList>
+                            );
+                    })}
+                </S.SelectTown>
+                
+                {add <= 0 ? null
+                : <S.SelectTown name="시/군/구" onChange={getSelectValue}>
                 <S.OptionTown value="">시/군/구</S.OptionTown>
                     { SelectData.town.option.map((el, i) => {
                         return (
@@ -26,8 +38,18 @@ function Select({ SelectData, getSelectValue }) {
                             </S.OptionTownList>
                         );
                     })}
-                
-                </S.SelectTown>
+                </S.SelectTown> }
+                {add <= 1 ? null
+                : <S.SelectTown name="시/군/구" onChange={getSelectValue}>
+                <S.OptionTown value="">시/군/구</S.OptionTown>
+                    { SelectData.town.option.map((el, i) => {
+                        return (
+                            <S.OptionTownList key={i} value={el}>
+                                {el}
+                            </S.OptionTownList>
+                        );
+                    })}
+                </S.SelectTown> }
             </S.SelectBox>
         </S.Container>
     );

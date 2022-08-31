@@ -13,6 +13,10 @@ import UserMy from './UserMy/UserMy';
 import {useHistory} from "react-router-dom";
 
 
+function test(){
+    window.location.href='/login'
+}
+
 
 const Header = (props) => {
     // const [quotationUsers, setQuotationUsers] = useState([]);
@@ -53,7 +57,6 @@ const Header = (props) => {
     // };
 
 
-
     return (
         <>
             <S.NavContainer>
@@ -72,7 +75,7 @@ const Header = (props) => {
                     window.location.href='/QuotationList'
                     // history.push('/QuotationList')
                 }} >견적보기</S.MenuList>
-                <S.MenuList>전문가 찾기</S.MenuList>
+                <S.MenuList onClick={test}>전문가 찾기</S.MenuList>
             </S.MenuBox>
                     </S.NavLeft>
                     <S.UserBox>

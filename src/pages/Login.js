@@ -10,17 +10,10 @@ import * as S from './UserButton/UserFormBtnEle';
 
 
 
-
-
-
 const Login = (props) => {
-    function Kakao() {
-        const REST_API_KEY = "46f056087e871bee8e632aab70ad7fc8"
-        const REDIRECT_URI = "http://13.209.67.178:3000//kakao"
-        const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-    }
-
-
+    const REST_API_KEY = "46f056087e871bee8e632aab70ad7fc8"
+    const REDIRECT_URI = "http://13.209.67.178:3000/kakaoLogin"
+    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
     const dispatch = useDispatch();
     const history = useHistory();
     const [id, setId] = useState("");
@@ -87,7 +80,17 @@ const Login = (props) => {
                 >
                     로그인
                 </Button>
-                <S.KakaoBtn>카카오톡으로 로그인</S.KakaoBtn>
+                {/*<S.KakaoBtn onClick={()=>{*/}
+                {/*    window.location.href = KAKAO_AUTH_URL;*/}
+                {/*}}>카카오톡으로 로그인</S.KakaoBtn>*/}
+                <a id="custom-login-btn" href="KAKAO_AUTH_URL">
+                    <img
+                        src="/images/kakao_login_large_narrow.png"
+                        width="100%"
+                        height='50px'
+                        alt="카카오 로그인 버튼"
+                    />
+                </a>
                 {/*<S.KakaoBtn>카카오톡으로 로그인</S.KakaoBtn>*/}
                 <Button
                     width="100%"

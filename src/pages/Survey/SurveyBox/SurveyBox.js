@@ -18,17 +18,20 @@ import {
 // STYLES
 import * as S from './SurveyBoxEle';
 import {getCookie} from "../../../shared/Cookie";
+import { SelectTown } from './Select/SelectEle';
+import { GiConsoleController } from 'react-icons/gi';
 
 // APIKEY
 
 function SurveyBox({ pageInfo,id }) {
     const [loading, setLoading] = useState(false);
-    const [selectedTown, setSelectedTown] = useState('');
+    const [selectedTown, setSelectedTown] = useState([]);
     const [radioValue, setRadioValue] = useState({
         gender: '',
         age: '',
         career: '',
     });
+    const [add,setAdd] = useState(0);
 
     const currentRadioQuestions = {
         0: 'gender',
@@ -71,6 +74,7 @@ function SurveyBox({ pageInfo,id }) {
     };
 
     const clickPrevBtn = () => {
+        setAdd(0);
         if (currentQ === 0) {
             setCurrentQ(0);
             setRadioValue('');
@@ -81,7 +85,14 @@ function SurveyBox({ pageInfo,id }) {
 
     const getSelectValue = e => {
         const { value } = e.target;
-        setSelectedTown(value);
+        if(value != '선택안함'){
+            let copy = [...selectedTown]
+            copy.push(value)
+            setSelectedTown(copy);
+            // console.log(selectedTown)
+            setAdd(add+1)    
+        }
+        
     };
 
     const getRadioValue = data => {
@@ -113,7 +124,7 @@ function SurveyBox({ pageInfo,id }) {
                     getRadioValue={getRadioValue}
                 />
             ),
-            3: <Select SelectData={SelectData} getSelectValue={getSelectValue} />,
+            3: <Select SelectData={SelectData} getSelectValue={getSelectValue} add={add} />,
         };
 
         return (

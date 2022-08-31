@@ -29,7 +29,8 @@ import {getCookie} from "../../../shared/Cookie";
 
 function GosuSurveyBox({info}) {
     const [loading, setLoading] = useState(false);
-    const [selectedTown, setSelectedTown] = useState('');
+    const [selectedTown, setSelectedTown] = useState([]);
+    const [add,setAdd] = useState(0);
     // const email = localStorage.getItem('email')
     // const name = localStorage.getItem('name')
     // const password = localStorage.getItem('password')
@@ -87,6 +88,7 @@ function GosuSurveyBox({info}) {
     };
 
     const clickPrevBtn = () => {
+        setAdd(0);
         if (currentQ === 0) {
             setCurrentQ(0);
             setRadioValue('');
@@ -97,7 +99,12 @@ function GosuSurveyBox({info}) {
 
     const getSelectValue = e => {
         const { value } = e.target;
-        setSelectedTown(value);
+        if(value!='선택안함'){
+        let copy = [...selectedTown];
+        copy.push(value);
+        setSelectedTown(copy);
+        setAdd(add+1);
+    }
     };
 
     const getRadioValue = data => {
@@ -149,7 +156,7 @@ function GosuSurveyBox({info}) {
                 </>
             ),
 
-            5: <Select SelectData={SelectData} getSelectValue={getSelectValue} />,
+            5: <Select SelectData={SelectData} getSelectValue={getSelectValue} add={add} />,
         };
 
 

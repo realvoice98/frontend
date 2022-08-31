@@ -21,47 +21,7 @@ function GosuList({ setReviewLength }) {
             .then(res => res.json())
             .then((res)=>  {
                 console.log(res);
-                setGosuLists(
-                    res
-                //     [
-                //     {
-                //         // image: '/images/winter9.png',
-                //         name: '윈터님',
-                //         age: '안녕하세요 윈터입니다~',
-                //         region: '서울',
-                //         carrer: 5,
-                //         id: 1,
-                //         category: 10,
-                //     },
-                //     {
-                //         // image: '/images/winter8.jpg',
-                //         name: '윈터님',
-                //         age: '안녕하세요 윈터입니다~',
-                //         region: '경기',
-                //         carrer: 5,
-                //         id: 2,
-                //         category: 10,
-                //     },
-                //     {
-                //         // image: '/images/winter7.jpg',
-                //         name: '윈터님',
-                //         age: '안녕하세요 윈터입니다~',
-                //         region: '수원',
-                //         carrer: 5,
-                //         id: 3,
-                //         category: 10,
-                //     },
-                //     {
-                //         // image: '/images/winter6.jpg',
-                //         name: '윈터님',
-                //         age: '안녕하세요 윈터입니다~',
-                //         region: '인천',
-                //         carrer: 5,
-                //         id: 4,
-                //         category: 10,
-                //     }
-                // ]
-                )
+                setGosuLists(res)
             });
     }, []);
     const [userLists, setUserLists] = useState([]);
@@ -84,46 +44,7 @@ function GosuList({ setReviewLength }) {
             .then(res => {
                 console.log(localStorage.getItem('email'))
                 console.log(res)
-                setUserLists(res
-
-                    // {
-                    //     // image: '/images/winter6.jpg', //고수 or 유저 이미지
-                    //     name: '윈터님', // 이름
-                    //     age: '안녕하세요 윈터입니다~', // 고수 or 유저 한줄소개
-                    //     region: '서울', // 고수 or 유저 별점
-                    //     carrer: 5, // 고수 or 유저 리뷰개수
-                    //     id: 1, // 고수 or 유저 아이디
-                    //     category: 10, // 고수는 고용된 횟수 , 유저는 고용한 횟수
-                    // },
-                    // {
-                    //     // image: '/images/4.jpg',
-                    //     name: '윈터님',
-                    //     age: '안녕하세요 윈터입니다~',
-                    //     region: '경기',
-                    //     carrer: 5,
-                    //     id: 2,
-                    //     category: 10,
-                    // },
-                    // {
-                    //     // image: '/images/winter9.png',
-                    //     name: '윈터님',
-                    //     age: '안녕하세요 윈터입니다~',
-                    //     region: '수원',
-                    //     carrer: 5,
-                    //     id: 3,
-                    //     category: 10,
-                    // },
-                    // {
-                    //     // image: '/images/winter6.jpg',
-                    //     name: '원터쨩',
-                    //     age: '안녕하세요 윈터입니다~',
-                    //     region: 4,
-                    //     carrer: 5,
-                    //     id: 4,
-                    //     category: 10,
-                    // }
-                )
-
+                setUserLists(res)
             });
     }, []);
 
@@ -133,8 +54,6 @@ function GosuList({ setReviewLength }) {
     const goToUserDetail = id => {
         window.location.href = `/GosuInfoDetail/${id}`;
     };
-    //{user_info && user_info.role != 'ROLE_HELPER' && userList.length == 0 ?
-// <div> 신청한 유저가 없습니다</div> : 유저리스트 불러오기}
     return (
         <>
             {

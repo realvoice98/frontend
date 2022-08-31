@@ -25,7 +25,7 @@ import ChatList from "./pages/Chat/client/ChatList";
 import GosuInfo from "./pages/Gosu/GosuQuotation/GosuInfo";
 import GosuInfoDetail from "./pages/Gosu/GosuQuotationDetail/GosuInfo";
 import Event from "./Event";
-import LawSurvey from "./pages/law/LawSurvey";
+import KakaoLogin from "./pages/KakaoLogin";
 function App(props) {
     const dispatch = useDispatch();
     const token = getCookie("access_token")
@@ -45,7 +45,7 @@ function App(props) {
         <ConnectedRouter history={history}>
             <Route path="/signin" exact component={Login}/>
             <Route path="/signup" exact component={SignUp}/>
-
+            <Route path="/kakaoLogin" exact component={KakaoLogin}/>
             <Route path="/" exact component={Main}/>
             <Route path="/QuotationList" exact component={QuotationList}/>
             <Route path="/ChatApp" exact component={ChatApp}/>
@@ -56,7 +56,7 @@ function App(props) {
             <Route path="/user/subscribe" exact component={Event}/>
             <Route path="/GosuInfoDetail/:id" exact component={GosuInfoDetail}/>
             <Route exact path="/GosuInfo/:id" component={GosuInfo} />
-            <Route exact path="/lawsurvey" component={LawSurvey} />
+            {/*<Route exact path="/lawsurvey" component={LawSurvey} />*/}
             <Route path="/Gosu/SignUp" exact component={GosuSignUp}/>
             <Route path="/category/" exact component={DetailCategory}/>
             <Route path="/category/:id" exact  component={DetailCategory}/>

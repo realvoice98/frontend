@@ -17,7 +17,6 @@ const initialState = {
     access_token: false,
 };
 
-
 //Action Creator
 const logOut = createAction(LOG_OUT, (user) => ({ user }));
 const setUser = createAction(SET_USER, (user) => ({ user }));
