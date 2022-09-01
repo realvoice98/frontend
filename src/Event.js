@@ -38,19 +38,21 @@ function Event() {
           console.log('SSE closed (' + event.target.readyState + ')')
         }
         eventSource.close();
-      }
+      };
 
       eventSource.onopen = (event) => {
         console.log("connection opened")
-      }
+      };
+
       setListening(true);
+    
     }
     return () => {
       eventSource.close();
       console.log("event closed")
-    }
+    };
 
-  }, [])
+  }, []);
 
   return (
       <>
