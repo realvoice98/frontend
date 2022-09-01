@@ -80,6 +80,7 @@ const Main = () => {
                 />
                     )}
             </Header1>
+            <Under/>
             {sliders.length !== 0 && (
                 <Slide sliders={sliders} GoToCategory={GoToCategory} />
             // <DetailCategory sliders={sliders} GoToServey={GoToServey} />
@@ -148,4 +149,15 @@ const MainTopText = styled.p`
   font-size: 40px;
   z-index: 1;
   font-family:'CuteFont-Regular';
+`;
+
+const Under = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: center;
+  margin : 10px auto ;
+  width: 1300px;
+  background-image: url('/images/mainunder.png');
+  background-position: center;
 `;

@@ -23,6 +23,7 @@
     "history": "^4.10.1",
     "http-proxy-middleware": "^2.0.6",
     "immer": "^9.0.15",
+    "mdb-react-ui-kit": "^4.2.0",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",

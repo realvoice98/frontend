@@ -10,10 +10,10 @@ function KakaoLogin() {
     const KAKAO_CODE = location.search.split('=')[1];
     console.log(KAKAO_CODE)
     fetch(`/kakao/${KAKAO_CODE}`, {
-        method:'POST',
-        body: JSON.stringify({
-            access: KAKAO_CODE,
-        }),
+        method:'GET',
+        // body: JSON.stringify({
+        //     access: KAKAO_CODE,
+        // }),
     })
         .then(res => res.json())
         .then(res => {

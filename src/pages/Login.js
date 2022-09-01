@@ -6,7 +6,7 @@ import { actionCreators as userActions } from "../redux/modules/user";
 import { history } from "../redux/configStore";
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
-import * as S from './UserButton/UserFormBtnEle';
+import * as S from './UserButtton/UserFormBtnEle';
 
 
 
@@ -83,11 +83,9 @@ const Login = (props) => {
                 <S.KakaoBtn
                     onClick={()=>{
                     window.location.href = KAKAO_AUTH_URL;
-                }}><img width='10%'
-
-                        src={'/images/kakao.png'} />카카오톡으로 로그인</S.KakaoBtn>
-
-                {/*<S.KakaoBtn>카카오톡으로 로그인</S.KakaoBtn>*/}
+                }}>
+                카카오톡으로 로그인
+                </S.KakaoBtn>
                 <Button
                     width="100%"
                     height="45px"
@@ -152,9 +150,22 @@ const Ul = styled.ul`
         : ""}
   }
 `;
-const FindID = styled.span`
-  font-size: 13px;
-  color: #b0b0b0;
-  text-decoration: underline;
+// const FindID = styled.span`
+//   font-size: 20px;
+//   position:absolute;
+//   transform: translateY(50%);
+// `;
+
+const Kakaoimg = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: center;
+  margin : 10px auto ;
+  width: 1300px;
+  background-image: url('/images/kakao.png'');
+  background-position: center;
 `;
+
+
 export default Login;

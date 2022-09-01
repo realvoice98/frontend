@@ -14,8 +14,9 @@ function Event() {
     if (!listening) {
       console.log('a')
       // { withCredentials: true }
-      eventSource = new EventSource(`/test/subscribe`);
+      eventSource = new EventSource(`/test/subscribe`)
       
+      //setListening(true);
        //eventSource.onmessage = (event) => {
          //console.log("result", event.data);
          //setData(old => [...old, event.data])
@@ -24,17 +25,12 @@ function Event() {
       eventSource.addEventListener("sse", (event) => {
         const result = JSON.parse(event.data);
         console.log("received:", result);
-        setData(result)
-      });
-
-      eventSource.addEventListener("complete", function(event) {
-	console.log('in');
-        eventSource.close();
+        setData(old => [...old , event.data])
       });
 
       eventSource.onerror = (event) => {
         console.log(event.target.readyState)
-        if (event.target.readyState === EventSource.CLOSED) {
+         if (event.target.readyState === EventSource.CLOSED) {
           console.log('SSE closed (' + event.target.readyState + ')')
         }
         eventSource.close();
@@ -44,7 +40,6 @@ function Event() {
         console.log("connection opened")
       };
 
-      setListening(true);
     
     }
     return () => {
@@ -56,6 +51,8 @@ function Event() {
 
   return (
       <>
+	 {data &&
+
       <div className="App">
         <header className="App-header">
           Received Data
@@ -65,6 +62,7 @@ function Event() {
           {/*)}*/}
         </header>
       </div>
+	 }
       </>
   );
 }
