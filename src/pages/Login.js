@@ -80,17 +80,13 @@ const Login = (props) => {
                 >
                     로그인
                 </Button>
-                {/*<S.KakaoBtn onClick={()=>{*/}
-                {/*    window.location.href = KAKAO_AUTH_URL;*/}
-                {/*}}>카카오톡으로 로그인</S.KakaoBtn>*/}
-                <a id="custom-login-btn" href="KAKAO_AUTH_URL">
-                    <img
-                        src="/images/kakao_login_large_narrow.png"
-                        width="100%"
-                        height='50px'
-                        alt="카카오 로그인 버튼"
-                    />
-                </a>
+                <S.KakaoBtn
+                    onClick={()=>{
+                    window.location.href = KAKAO_AUTH_URL;
+                }}><img width='10%'
+
+                        src={'/images/kakao.png'} />카카오톡으로 로그인</S.KakaoBtn>
+
                 {/*<S.KakaoBtn>카카오톡으로 로그인</S.KakaoBtn>*/}
                 <Button
                     width="100%"

@@ -1,11 +1,38 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 import styled, { keyframes } from 'styled-components';
+import axios from "axios";
+import { getCookie, setCookie, deleteCookie } from "../shared/Cookie";
+
 
 function KakaoLogin() {
     const location = useLocation();
     const KAKAO_CODE = location.search.split('=')[1];
     console.log(KAKAO_CODE)
+    fetch(`/kakao/${KAKAO_CODE}`, {
+        method:'POST',
+        body: JSON.stringify({
+            access: KAKAO_CODE,
+        }),
+    })
+        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+            const access_token = res.headers.access_token;
+            const refresh_token = res.headers.refresh_token;
+            console.log('성공')
+            // 토큰을 헤더 디폴트 값으로 설정
+            axios.defaults.headers.common[
+                "Authorization"
+                ] = `Bearer ${access_token}`;
+            setCookie("access_token", res.headers.access_token);
+            setCookie("refresh_token", res.headers.refresh_token);
+            document.location.href = "/";
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
     return (
     <Container>
         <TextBox>
